@@ -227,7 +227,9 @@ AUC = []
 # 开始K折交叉验证
 for fold, (train_index, test_index) in enumerate(kf.split(dti)):
     labels_train, labels_test = labels[train_index], labels[test_index]
-
+    model = Model().to(device)
+    criterion = nn.CrossEntropyLoss()
+    optimizer = torch.optim.Adam(model.parameters(), lr=0.0002,weight_decay=0.0001) # AD 0.0002
     # 在当前fold上进行训练和测试
     for epoch in range(num_epochs):
         # Training

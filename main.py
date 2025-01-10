@@ -27,9 +27,9 @@ labels = labels.to(device)
 
 num_epochs = 500
 w = 0.00005
-model = Model().to(device)
-criterion = nn.CrossEntropyLoss()
-optimizer = torch.optim.Adam(model.parameters(), lr=0.0002,weight_decay=0.0001) # AD 0.0002
+# model = Model().to(device)
+# criterion = nn.CrossEntropyLoss()
+# optimizer = torch.optim.Adam(model.parameters(), lr=0.0002,weight_decay=0.0001) # AD 0.0002
 
 def modality_alignment_loss(x1, x2):
     # kl
